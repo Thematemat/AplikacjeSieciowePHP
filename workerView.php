@@ -9,7 +9,8 @@
 </head>
 <body>
 <?php
-    echo "SERWIS hehe";
+    echo "<h3 style=text-align:right><a href =loginScreen.php>Wyloguj</a><br></h3>";
+    echo "SERWIS dla pracownika";
 ?>
 </body>
 </html>
