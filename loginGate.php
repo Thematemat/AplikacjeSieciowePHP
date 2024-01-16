@@ -2,6 +2,8 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./style.css">
     <title>ImBiblio</title>
     <h1>ImBiblio</h1>
     <h2>System Biblioteki Imperialnej</h2>
@@ -32,20 +34,24 @@ else {
             echo "<h3 style=text-align:right><a href =loginScreen.php>Wyloguj</a><br></h3>";
             echo "Zalogowano jako: $arr[1] <br>";
             echo "Bardzo dobra robota!";
-        }
+
 
             if ($funkcja == "pracownik") {
                 echo "Ups automatyczne przekierowanie nie zadziałało użyj Przejdź do serwisu, by kontynuować logowanie.";
                 echo "<h3><a href =workerView.php>Przejdź do serwisu</a><br></h3>";
                 $redirectUrl = 'workerView.php';
                 header('Location: ' . $redirectUrl);
-                }
+                echo $funkcja;
+            }
 
-                elseif ($funkcja == "czytelnik") {
-                    $redirectUrl = 'readerView.php?user='. urlencode($user);
-                    header('Location: ' . $redirectUrl);
-                    echo "Ups automatyczne przekierowanie nie zadziałało użyj Przejdź do serwisu, by kontynuować logowanie.";
-            } elseif ($j == $i) {
+            elseif ($funkcja == "czytelnik") {
+                $redirectUrl = 'readerView.php?user='. urlencode($user);
+                header('Location: ' . $redirectUrl);
+                echo $funkcja;
+                echo "Ups automatyczne przekierowanie nie zadziałało użyj Przejdź do serwisu, by kontynuować logowanie.";
+            }
+        }
+    elseif ($j == $i) {
                 echo "Wprowadzono złe dane!<br>";
                 echo "<a href =loginScreen.php>Powrót</a><br>";
             }
